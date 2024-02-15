@@ -38,15 +38,8 @@ const About = props => {
   return (
     <>
         {bio}
-        <img src = {pic} />
-      {/* <h1>Hi. My name is Navid Chowdhury</h1>
-      <p>I am a senior Computer Science student at NYU with a minor in Web Applications. In my spare time I love to read, play videogames, ride my skateboard, and watch various crime shows.
-        My favorites include Psych, Leverage, Tulsa King, and currently Snowfall. I typically play videogames on my PC (which was fun to build) but occasionally on other platforms too like my Switch. My favorite games include GTA V, Marvel's Spider-Man, Detroit Become Human, and occasionally Call of Duty. On the Switch I loved the Zelda games. 
-      </p>
-      <br/>
-      <p>
-        I also love listening to music. My top artists include Pop Smoke, OneRepublic, Omah Ley, and Maroon 5. My favorite songs are The Monster by Eminem, More Than You Know by Axwell Ingrosso, and Hope by The Chainsmokers. Honorable mentions include Keep You Mine by NOTD and Banlieue by Neima Ezza. I listen to music while doing almost any task and as a result I had over 100,000 minutes worth of music listened to on Spotify this past year. This equates to about 70 days straight.
-      </p> */}
+        <img src = {`${process.env.REACT_APP_SERVER_HOSTNAME}${pic}`} />
+ 
     </>
   )
 }
