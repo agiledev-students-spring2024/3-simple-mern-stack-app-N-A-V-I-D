@@ -7,6 +7,7 @@ import axios from 'axios'
  */
 const About = props => {
     const [bio, setBio] = useState([])
+    const [bio2, setBio2] = useState([])
     const [pic, setPic] = useState([])
 
     const fetchBio = () => {
@@ -18,6 +19,8 @@ const About = props => {
             // axios bundles up all response data in response.data property
             const bio = response.data.html_about_me
             setBio(bio)
+            const bio2 = response.data.html_about_me_2
+            setBio2(bio2)
             const pic = response.data.photo_of_me
             console.log(pic)
             setPic(pic)
@@ -38,6 +41,10 @@ const About = props => {
   return (
     <>
         {bio}
+        <br/>
+        <br/>
+        {bio2}
+        <br/>
         <img src = {`${process.env.REACT_APP_SERVER_HOSTNAME}${pic}`} />
  
     </>
