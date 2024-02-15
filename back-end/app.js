@@ -22,6 +22,21 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+
+app.get('/aboutus', async (req, res) =>{
+  try{
+    const about_me = {
+      html_about_me:"Hi. My name is Navid Chowdhury\nI am a senior Computer Science student at NYU with a minor in Web Applications. In my spare time I love to read, play videogames, ride my skateboard, and watch various crime shows. My favorites include Psych, Leverage, Tulsa King, and currently Snowfall. I typically play videogames on my PC (which was fun to build) but occasionally on other platforms too like my Switch. My favorite games include GTA V, Marvel's Spider-Man, Detroit Become Human, and occasionally Call of Duty. On the Switch I loved the Zelda games.\n\n I also love listening to music. My top artists include Pop Smoke, OneRepublic, Omah Ley, and Maroon 5. My favorite songs are The Monster by Eminem, More Than You Know by Axwell Ingrosso, and Hope by The Chainsmokers. Honorable mentions include Keep You Mine by NOTD and Banlieue by Neima Ezza. I listen to music while doing almost any task and as a result I had over 100,000 minutes worth of music listened to on Spotify this past year. This equates to about 70 days straight.</p>",
+      photo_of_me: "..\back-end\public\asset\navidspicture.jpg"
+    }
+    res.json(about_me)
+  } catch(err) {
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve image from back-end',
+    })
+  }
+})
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
